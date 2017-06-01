@@ -33,6 +33,14 @@ class AdmControl extends CI_Controller {
 		 redirect('admLogin/login');
 	}
 	
+	function delete($id){
+		$where = array(
+			'no_order' => $id
+			);
+		$this->admMod->delete_order($where);
+		redirect('admControl/listOrder');
+	}
+	
 	function validasi($id){
 
 		$data_update = array(
