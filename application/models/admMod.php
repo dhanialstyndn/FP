@@ -45,6 +45,9 @@ class AdmMod extends CI_Model {
 		return $data->result_array();
 
 	}
+	function delete_order($where){
+		$this->db->delete('order_paket',$where);
+	}
 
 	function validate($table,$where,$data){
 		$this->db->update($table,$data,$where);
